@@ -1,16 +1,17 @@
 //Node.h
 //==========================
 //Include Guard
-#ifndef NODE_H
-#define NODE_H
-
-
+#ifndef _NODE_H_INCLUDED_
+#define _NODE_H_INCLUDED_
 //==========================
-
+// Forward Declarations
 
 //=========================
+// Include Declarations
+#include <iostream>
 #include <vector>
 
+using namespace std;
 //=========================
 
 class Node {
@@ -19,7 +20,7 @@ class Node {
 		int cost_to_node;
 		int est_to_goal;
 		int total;
-		vector<vector<int> matrix;
+		vector<vector<int>> matrix;
 
 	public:
 		Node(int ctn, vector<vector<int>> m);
@@ -28,7 +29,8 @@ class Node {
 		int get_Estimate();
 		void get_Matrix(vector<vector<int>>& m);
 		int get_Total();
-		
+		int get_Cost_To_Node();
+		friend ostream& operator<<(ostream& os, const Node& n);	
 
 };
 

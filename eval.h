@@ -2,38 +2,34 @@
 #ifndef EVAL_H
 #define EVAL_H
 //==================
-
+// Forward Declarations
+class Node;
 
 //==================
-#include <vector>
+// Include Declarations
 
 //==================
 
 
 class Eval {
-	
-	protected:
-		
 	public:
 		Eval() {};
-		virtual int evaluate(vector<vector<int>> matr, int n) = 0;
+		virtual int evaluate(Node* state, int n) = 0;
 		
 };
 
 
 class Misplaced : public Eval {
-
 	public:
 		Misplaced() {};
-		virtual int evaluate(vector<vector<int>> matr, int n);
+		virtual int evaluate(Node* state, int n);
 
 };
 
 class Manhattan : public Eval {
-
 	public:
 		Manhattan() {};
-		virtual int evaluate(vector<vector<int>> matr, int n);
+		virtual int evaluate(Node* state, int n);
 
 };
 
